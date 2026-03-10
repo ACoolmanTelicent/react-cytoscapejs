@@ -52,7 +52,8 @@ class MyApp extends React.Component {
   }
 }
 
-ReactDOM.render( React.createElement(MyApp, document.getElementById('root')));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(React.createElement(MyApp));
 ```
 
 ## `Basic props`

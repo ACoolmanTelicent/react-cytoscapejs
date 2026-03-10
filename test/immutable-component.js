@@ -67,7 +67,7 @@
   }
 
   describe('Immutable component', function() {
-    let root, setState, json;
+    let root, reactRoot, setState, json;
 
     let updateCyProps = newProps =>
       new Promise(resolve => {
@@ -81,17 +81,17 @@
 
       document.body.appendChild(root);
 
-      ReactDOM.render(
+      reactRoot = ReactDOM.createRoot(root);
+      ReactDOM.flushSync(() => reactRoot.render(
         React.createElement(TestComponent, {
           setStateRef: ref => (setState = ref),
           defaults: json
-        }),
-        root
-      );
+        })
+      ));
     });
 
     afterEach(function() {
-      ReactDOM.unmountComponentAtNode(root);
+      reactRoot.unmount();
       document.body.removeChild(root);
     });
 
