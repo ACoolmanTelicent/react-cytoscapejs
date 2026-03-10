@@ -30,6 +30,7 @@
     "test:mocha": "run-s build test:mocha:run",
     "test:mocha:run": "mocha-chrome test/index.html --chrome-launcher.connectionPollInterval=2000 --chrome-launcher.maxConnectionRetries=300",
     "test": "run-s test:*",
+    "demo": "sh scripts/demo.sh",
     "watch": "microbundle watch --globals=react=React,cytoscape=cytoscape,prop-types=PropTypes",
     "start": "run-s watch"
   },
@@ -38,6 +39,9 @@
     "react": ">=16.8.0"
   },
   "devDependencies": {
+    "esbuild": "^0.25.0",
+    "open-cli": "^8.0.0",
+    "serve": "^14.0.0",
     "chai": "^4.3.6",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",

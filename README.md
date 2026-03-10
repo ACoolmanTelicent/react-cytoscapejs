@@ -322,6 +322,10 @@ The `cy` prop allows for getting a reference to the `cy` Cytoscape object, e.g.:
 <CytoscapeComponent cy={(cy) => { myCyRef = cy }} />
 ```
 
+## Development
+
+Run `npm run demo` to build and open the demo in your browser.
+
 ## Change log
 
 - v2.0.0
