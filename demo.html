@@ -4,8 +4,7 @@
 <!-- Use `npm run demo` to view the demo -->
 
 <head>
-  <script src="node_modules/react/umd/react.development.js"></script>
-  <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+  <script src="demo.js"></script>
   <script src="node_modules/cytoscape/dist/cytoscape.min.js"></script>
   <script src="node_modules/prop-types/prop-types.js"></script>
   <script src="dist/react-cytoscape.umd.js"></script>
@@ -83,9 +82,9 @@
 
       let update;
 
-      ReactDOM.render(
-        React.createElement(TestComponent, { setStateRef: ref => update = ref }),
-        document.getElementById('root')
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(
+        React.createElement(TestComponent, { setStateRef: ref => update = ref })
       );
 
       textBox.value = JSON.stringify(exampleProps, null, 2);

@@ -52,7 +52,8 @@ class MyApp extends React.Component {
   }
 }
 
-ReactDOM.render( React.createElement(MyApp, document.getElementById('root')));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(React.createElement(MyApp));
 ```
 
 ## `Basic props`
@@ -320,6 +321,10 @@ The `cy` prop allows for getting a reference to the `cy` Cytoscape object, e.g.:
 ```jsx
 <CytoscapeComponent cy={(cy) => { myCyRef = cy }} />
 ```
+
+## Development
+
+Run `npm run demo` to build and open the demo in your browser.
 
 ## Change log
 
